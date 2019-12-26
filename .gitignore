@@ -1,0 +1,8 @@
+.DS_Store
+**/.DS_Store
+mvc/build.gradle
+mvc/gradle
+mvc/gradlew
+mvc/gradlew.bat
+mvc/settings.gradle
+mvc/src/test

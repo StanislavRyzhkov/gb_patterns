@@ -1,0 +1,53 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru_RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title th:text="${book.title}"></title>
+</head>
+<body>
+<div th:replace="~{nav :: navi('book')}"></div>
+<div class="container">
+  <h1 class="text-center mt-3">Книга</h1>
+
+  <div class="row">
+    <div class="card col-6 m-auto" style="width: 18rem;">
+      <!--          <img src="..." class="card-img-top" alt="...">-->
+      <div class="card-body">
+        <h5 th:text="${book.title}" class="card-title"></h5>
+        <h6>
+          <span>Цена: </span>
+          <span th:text="${book.price}"></span>
+          <span> рублей</span>
+        </h6>
+        <p class="card-text">
+          Страна:
+          <span th:text="${book.origin}"></span>
+        </p>
+        <p class="card-text">
+          Стиль:
+          <span th:text="${book.style}" ></span>
+        </p>
+        <p class="card-text">
+          Артикул:
+          <span th:text="${book.vendorCode}"></span>
+        </p>
+        Авторы:
+        <ul>
+          <li th:each="author : ${book.authors}">
+            <span th:text="${author.firstName}"></span>
+            <span th:text="${author.secondName}"></span>
+          </li>
+        </ul>
+        <a href="#" class="btn btn-primary">Смотреть</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
